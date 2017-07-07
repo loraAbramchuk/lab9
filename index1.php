@@ -56,7 +56,30 @@ $page = str_replace('{COMMENT3}', $out, $page);
 //print_r ($_FILES['ufile']);
 
 
-
+//else {
+//    $sql = "SELECT * FROM `wall` ORDER BY `Number` DESC";
+//    $dda = mysqli_query($db, $sql);
+//    $count = mysqli_affected_rows($db);
+//
+//
+//    for ($i=0; $i<$count; $i++){
+//        $dda_info = mysqli_fetch_assoc($dda);
+//
+//
+//
+//        $out .= "<font color='blue'><u>".$dda_info['Name']."</u></font> <font color='gray'>".$dda_info['Date'] .
+//            "</font></br>". $dda_info['Message']."<img src=".$dda_info['Image']." width='100px'; height='100px'>"." <a href ='?DID=".$dda_info['Number']."'>Удалить запись</a></br><hr/>";
+//        if(!empty($_GET['DID'])){
+//            $sql2 =   "DELETE FROM `wall` WHERE `wall`.`Number` =".$_GET['DID'];
+//     $dda2 = mysqli_query($db, $sql2);
+//            //print_r(mysqli_affected_rows($dda2));
+//        }
+//
+//
+//    }
+//    $page = str_replace('{COMMENT3}',$out, $page);
+//
+//}
 
 $page = str_replace('{COMMENT}', $tak, $page);
 
