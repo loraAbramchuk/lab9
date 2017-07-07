@@ -2,10 +2,10 @@
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Июл 07 2017 г., 22:44
--- Версия сервера: 10.1.21-MariaDB
--- Версия PHP: 5.6.30
+-- Хост: 127.0.0.1:3306
+-- Время создания: Июл 08 2017 г., 01:24
+-- Версия сервера: 5.5.53
+-- Версия PHP: 5.6.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -58,19 +58,24 @@ INSERT INTO `wall` (`Number`, `Name`, `Date`, `Message`, `Image`, `File`) VALUES
 --
 
 CREATE TABLE `wall2` (
-  `ID` int(10) UNSIGNED NOT NULL,
+  `ID` int(20) UNSIGNED NOT NULL,
   `R1` int(11) NOT NULL,
   `R2` int(11) NOT NULL,
   `Name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `wall2`
 --
 
 INSERT INTO `wall2` (`ID`, `R1`, `R2`, `Name`) VALUES
-(0, 1, 0, '???????'),
-(1, 1, 0, '???????');
+(1, 1, 0, 'Главная'),
+(2, 1, 1, 'История'),
+(3, 1, 2, 'Руководство'),
+(4, 2, 0, 'Статьи'),
+(5, 3, 0, 'О компании'),
+(6, 3, 1, 'Контакты'),
+(7, 3, 2, 'Вакансии');
 
 --
 -- Индексы сохранённых таблиц
@@ -83,6 +88,12 @@ ALTER TABLE `wall`
   ADD PRIMARY KEY (`Number`);
 
 --
+-- Индексы таблицы `wall2`
+--
+ALTER TABLE `wall2`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -91,6 +102,11 @@ ALTER TABLE `wall`
 --
 ALTER TABLE `wall`
   MODIFY `Number` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+--
+-- AUTO_INCREMENT для таблицы `wall2`
+--
+ALTER TABLE `wall2`
+  MODIFY `ID` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
